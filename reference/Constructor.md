@@ -77,3 +77,63 @@ delete
 delete
 
  ```
+ 
+   * if returen value is class, then the move constructor will be called if there is, otherwise the copy constructor 
+   
+ ```cpp
+ #include <iostream>
+class MyClass {
+private:
+    int a;
+    int *p;
+  public:
+   MyClass() {
+    std::cout << "default constructor "<< std::endl;
+   }
+    MyClass(MyClass &&Rhs){
+        std::cout << "move " << std::endl;
+    }
+
+    MyClass(MyClass &Rhs){
+        std::cout << "cpy" << std::endl;
+    }
+
+    ~MyClass(){
+        std::cout << "delete "<< std::endl;
+    }
+
+};
+
+MyClass create() {
+    std::cout << "entrer" << std::endl;
+    MyClass ret;
+    std::cout << "exitr" << std::endl;
+    return ret;
+}
+
+int main(){
+   create();
+    return 0;
+}
+
+ ```
+ 
+ ```shell
+ ##:comment out the move constructor
+ bcao@apt-sz08:/build/bcao/test_work_place/move-semantic$ g++11 test.cpp -fno-elide-constructors && ./a.out
+ entrer
+ default constructor
+ exitr
+ cpy
+ delete
+ delete
+ bcao@apt-sz08:/build/bcao/test_work_place/move-semantic$ g++11 test.cpp -fno-elide-constructors && ./a.out
+ entrer
+ default constructor
+ exitr
+ move
+ delete
+ delete
+ bcao@apt-sz08:/build/bcao/test_work_place/move-semantic$
+
+ ```

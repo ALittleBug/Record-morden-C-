@@ -4,7 +4,7 @@
   * [Bo Qin vedio about move semantic](https://www.youtube.com/watch?v=IOkgBrXCtfo)
   
 * C++ Return type is Class value, gcc will optimized and not generate a tempary vaviable
- * refer [link](https://blog.csdn.net/sxhelijian/article/details/50977946)
+  * refer [link](https://blog.csdn.net/sxhelijian/article/details/50977946)
  ```cpp
  #include <iostream>
 class MyClass {

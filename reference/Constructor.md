@@ -2,7 +2,9 @@
   * Whether the constructor can be called depends on whether a new object is generated
   * foo(MyClass &rM) foo (MyClass &&rM) foo(MyClass vM) 
   * [Bo Qin vedio about move semantic](https://www.youtube.com/watch?v=IOkgBrXCtfo)
-  
+* Default move constuctor
+  * refer [link](https://stackoverflow.com/questions/11572669/move-with-vectorpush-back) [sample for vector using move/copy](https://www.educative.io/edpresso/what-is-a-move-constructor-in-cpp)
+  >15 The implicitly-defined copy/move constructor for a non-union class X performs a memberwise copy/move of its bases and members.
 * C++ Return type is Class value, gcc will optimized and not generate a tempary vaviable
   * refer [link](https://blog.csdn.net/sxhelijian/article/details/50977946)
  ```cpp

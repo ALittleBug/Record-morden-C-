@@ -2,6 +2,15 @@
   * Whether the constructor can be called depends on whether a new object is generated
   * foo(MyClass &rM) foo (MyClass &&rM) foo(MyClass vM) 
   * [Bo Qin vedio about move semantic](https://www.youtube.com/watch?v=IOkgBrXCtfo)
+* Default copy constructor for array type
+  * [stack overflow link](https://stackoverflow.com/questions/5700204/c-does-implicit-copy-constructor-copy-array-member-variable)
+  ```
+  Each subobject is copied in the manner appropriate to its type:
+
+  if the subobject is of class type, the copy constructor for the class is used;
+  if the subobject is an array, each element is copied, in the manner appropriate to the element type;
+  if the subobject is of scalar type, the built-in assignment operator is used.
+  ```
 * Default move constuctor
   * refer [link](https://stackoverflow.com/questions/11572669/move-with-vectorpush-back) and [sample for vector using move/copy](https://www.educative.io/edpresso/what-is-a-move-constructor-in-cpp) 
   >15 The implicitly-defined copy/move constructor for a non-union class X performs a memberwise copy/move of its bases and members.

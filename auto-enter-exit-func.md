@@ -3,7 +3,7 @@
   
   ```
   -finstrument-functions
-Generate instrumentation calls for entry and exit to functions. Just after function entry and just before function exit, the following profiling functions will be called with the address of the current function and its call site. 
+  Generate instrumentation calls for entry and exit to functions. Just after function entry and just before function exit, the following profiling functions will be called with    the address of the current function and its call site. 
   1. addr2line -f -e $EXE $ADDR
   2. __attribute__((constructor)) 
   ```
